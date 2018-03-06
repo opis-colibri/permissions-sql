@@ -17,9 +17,11 @@
 
 namespace OpisColibri\PermissionsSQLImpl;
 
-use function Opis\Colibri\Functions\schema;
 use Opis\Colibri\Installer as AbstractInstaller;
 use Opis\Database\Schema\CreateTable;
+use function Opis\Colibri\Functions\{
+    db, schema, uuid4
+};
 
 class Installer extends AbstractInstaller
 {
@@ -35,6 +37,21 @@ class Installer extends AbstractInstaller
             $table->boolean('is_user_created')->defaultValue(true)->notNull();
             $table->binary('permissions')->notNull();
         });
+
+        $roles = [
+            'anonymous' => 'Anonymous user',
+            'authenticated' => 'Authenticated user',
+        ];
+
+        foreach ($roles as $name => $description) {
+            db()->insert([
+                'id' => uuid4(''),
+                'name' => $name,
+                'description' => $description,
+                'is_user_created' => false,
+                'permissions' => '[]',
+            ])->into('roles');
+        }
     }
 
     /**
