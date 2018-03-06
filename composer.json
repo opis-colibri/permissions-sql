@@ -1,7 +1,7 @@
 {
-    "name": "opis-colibri/sql-permission-entities",
+    "name": "opis-colibri/permissions-sql-impl",
     "type": "opis-colibri-module",
-    "description": "SQL based implementation for opis-colibri/permissions module",
+    "description": "SQL-based implementation for opis-colibri/permissions module",
     "keywords": ["opis", "colibri", "module", "permissions module", "sql"],
     "homepage": "http://opis.io",
     "license": "Apache-2.0",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OpisColibri\\SqlPermissionEntities\\": "src/"
+            "OpisColibri\\PermissionsSQLImpl\\": "src/"
         }
     },
     "config": {
@@ -29,11 +29,11 @@
             "title": "User SQL",
             "collector": {
                 "file": "src/Collector.php",
-                "class": "OpisColibri\\SqlPermissionEntities\\Collector"
+                "class": "OpisColibri\\PermissionsSQLImpl\\Collector"
             },
             "installer": {
                 "file": "src/Installer.php",
-                "class": "OpisColibri\\SqlPermissionEntities\\Installer"
+                "class": "OpisColibri\\PermissionsSQLImpl\\Installer"
             }
         },
         "branch-alias": {

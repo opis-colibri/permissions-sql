@@ -15,33 +15,19 @@
  * limitations under the License.
  * ============================================================================ */
 
-namespace OpisColibri\SqlPermissionEntities;
+namespace OpisColibri\PermissionsSQLImpl;
 
-use function Opis\Colibri\Functions\schema;
-use Opis\Colibri\Installer as AbstractInstaller;
-use Opis\Database\Schema\CreateTable;
+use Opis\Colibri\Collector as AbstractCollector;
+use Opis\Colibri\ItemCollectors\ContractCollector;
+use OpisColibri\Permissions\IRoleRepository;
 
-class Installer extends AbstractInstaller
+class Collector extends AbstractCollector
 {
     /**
-     * @throws \Exception
+     * @param ContractCollector $contract
      */
-    public function install()
+    public function contracts(ContractCollector $contract)
     {
-        schema()->create('roles', function(CreateTable $table){
-            $table->string('id', 32)->notNull()->primary();
-            $table->string('name', 64)->notNull()->unique();
-            $table->string('description', 255)->notNull();
-            $table->boolean('is_user_created')->defaultValue(true)->notNull();
-            $table->binary('permissions')->notNull();
-        });
-    }
-
-    /**
-     * @throws \Exception
-     */
-    public function uninstall()
-    {
-        schema()->drop('roles');
+        $contract->singleton(IRoleRepository::class, RoleRepository::class);
     }
 }

@@ -15,7 +15,7 @@
  * limitations under the License.
  * ============================================================================ */
 
-namespace OpisColibri\SqlPermissionEntities;
+namespace OpisColibri\PermissionsSQLImpl;
 
 use function Opis\Colibri\Functions\{
     entity, entityManager
