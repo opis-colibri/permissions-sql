@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OpisColibri\\PermissionsSQLImpl\\": "src/"
+            "OpisColibri\\PermissionsSQL\\": "src/"
         }
     },
     "config": {
@@ -29,11 +29,11 @@
             "title": "User SQL",
             "collector": {
                 "file": "src/Collector.php",
-                "class": "OpisColibri\\PermissionsSQLImpl\\Collector"
+                "class": "OpisColibri\\PermissionsSQL\\Collector"
             },
             "installer": {
                 "file": "src/Installer.php",
-                "class": "OpisColibri\\PermissionsSQLImpl\\Installer"
+                "class": "OpisColibri\\PermissionsSQL\\Installer"
             }
         },
         "branch-alias": {

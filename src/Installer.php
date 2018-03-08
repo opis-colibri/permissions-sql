@@ -15,7 +15,7 @@
  * limitations under the License.
  * ============================================================================ */
 
-namespace OpisColibri\PermissionsSQLImpl;
+namespace OpisColibri\PermissionsSQL;
 
 use Opis\Colibri\Installer as AbstractInstaller;
 use Opis\Database\Schema\CreateTable;

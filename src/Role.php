@@ -15,7 +15,7 @@
  * limitations under the License.
  * ============================================================================ */
 
-namespace OpisColibri\PermissionsSQLImpl;
+namespace OpisColibri\PermissionsSQL;
 
 use Opis\ORM\{
     Entity,
