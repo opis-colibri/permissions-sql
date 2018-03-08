@@ -1,5 +1,5 @@
 {
-    "name": "opis-colibri/permissions-sql-impl",
+    "name": "opis-colibri/permissions-sql",
     "type": "opis-colibri-module",
     "description": "SQL-based implementation for opis-colibri/permissions module",
     "keywords": ["opis", "colibri", "module", "permissions module", "sql"],
