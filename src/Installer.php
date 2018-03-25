@@ -32,7 +32,7 @@ class Installer extends AbstractInstaller
     {
         schema()->create('roles', function(CreateTable $table){
             $table->string('id', 32)->notNull()->primary();
-            $table->string('name', 64)->notNull()->unique();
+            $table->string('name', 32)->notNull()->unique();
             $table->string('description', 255)->notNull();
             $table->boolean('is_user_created')->defaultValue(true)->notNull();
             $table->binary('permissions')->notNull();
