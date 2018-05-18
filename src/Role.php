@@ -18,10 +18,7 @@
 namespace OpisColibri\PermissionsSQL;
 
 use Opis\ORM\{
-    Entity,
-    IEntityMapper,
-    Core\DataMapper,
-    Core\EntityMapper
+    Entity, IEntityMapper, IDataMapper, IMappableEntity
 };
 use OpisColibri\Permissions\{
     IRole,
@@ -32,7 +29,7 @@ use function Opis\Colibri\Functions\{
     make, uuid4
 };
 
-class Role extends Entity implements IRole, IEntityMapper
+class Role extends Entity implements IRole, IMappableEntity
 {
     /**
      * @inheritDoc
@@ -116,7 +113,7 @@ class Role extends Entity implements IRole, IEntityMapper
     /**
      * @inheritDoc
      */
-    public static function mapEntity(EntityMapper $mapper)
+    public static function mapEntity(IEntityMapper $mapper)
     {
         $mapper->cast([
             'permissions' => 'json',
@@ -139,7 +136,7 @@ class Role extends Entity implements IRole, IEntityMapper
             return make(IPermissionRepository::class)->getMultipleByName($names);
         });
 
-        $mapper->primaryKeyGenerator(function (DataMapper $data) {
+        $mapper->primaryKeyGenerator(function (IDataMapper $data) {
             return uuid4('');
         });
     }
