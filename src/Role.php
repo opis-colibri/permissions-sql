@@ -124,12 +124,12 @@ class Role extends Entity implements IRole, IMappableEntity
             $names = [];
             foreach ($permissions as $permission) {
                 if ($permission instanceof IPermission) {
-                    $names[] = $permission->name();
+                    $names[$permission->name()] = $permission->name();
                 } elseif (is_string($permission)) {
-                    $names[] = $permission;
+                    $names[$permission] = $permission;
                 }
             }
-            return $names;
+            return array_values($names);
         });
 
         $mapper->getter('permissions', function (array $names) {
