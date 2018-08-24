@@ -15,12 +15,12 @@
  * limitations under the License.
  * ============================================================================ */
 
-namespace OpisColibri\PermissionsSQL;
+namespace Opis\Colibri\Modules\PermissionsSQL;
 
 use function Opis\Colibri\Functions\{
     entity, entityManager
 };
-use OpisColibri\Permissions\{
+use Opis\Colibri\Modules\Permissions\{
     IRole,
     IRoleRepository
 };

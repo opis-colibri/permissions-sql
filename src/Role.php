@@ -15,12 +15,12 @@
  * limitations under the License.
  * ============================================================================ */
 
-namespace OpisColibri\PermissionsSQL;
+namespace Opis\Colibri\Modules\PermissionsSQL;
 
 use Opis\ORM\{
     Entity, IEntityMapper, IDataMapper, IMappableEntity
 };
-use OpisColibri\Permissions\{
+use Opis\Colibri\Modules\Permissions\{
     IRole,
     IPermission,
     IPermissionRepository
